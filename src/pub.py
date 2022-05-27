@@ -8,5 +8,6 @@ class Pub:
     def increase_till(self, cash):
         self.till += cash
 
-    def sell_a_drink(self, drink):
-        self.till += drink.price
+    def sell_a_drink(self, drink, customer):
+        if customer.age >= 18:
+            self.increase_till(drink.price)
